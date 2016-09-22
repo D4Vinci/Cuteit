@@ -45,10 +45,10 @@ print " Note:don't type a long url because it's encode the ip only.!"
 ip = raw_input("  ip > ")
 ip=ip.replace("http://","")
 print "\n"
-for n,i in enumerate( ip2hex("192.168.1.1") + ip_as_url("192.168.1.1") ):
+for n,i in enumerate( ip2hex(ip) + ip_as_url(ip) ):
       if "http" not in i:
             print " ["+str(n)+"] "+"http://"+i
       else:
             print " ["+str(n)+"] "+i
-print " [12] http://" + ip2Octal("192.168.1.1")
-print " [13] http://" + ip2long("192.168.1.1")
+print " [12] http://" + ip2Octal(ip)
+print " [13] http://" + ip2long(ip)
