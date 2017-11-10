@@ -41,7 +41,7 @@ def ip_as_url(ip):
                "http://anywebsite@"+str( ip2Octal(ip) )]
 
 print "\n Cuteit - Make a malicious ip a bit cuter :D"
-print " Note:don't type a long url because it's encode the ip only.!"
+print " Note:don't type a long url because it's converts the ip only.!"
 ip = raw_input("  ip > ")
 ip=ip.replace("http://","")
 print "\n"
