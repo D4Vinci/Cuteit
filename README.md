@@ -6,11 +6,11 @@ All of that can be simply done by obfuscating IPs to many different forms.
 
 ## Running
 
-    python cuteit.py
+    python Cuteit.py
 
 ## Screenshot
 
-![screenshot](screenshot.png)
+![screenshot](Screenshot.PNG)
 
 ## Notes
 
