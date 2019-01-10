@@ -1,6 +1,17 @@
 # Cuteit - Make a malicious ip a bit cuter :smile:
+
 A simple python tool to help you to social engineer, bypass whitelisting firewalls, potentially break regex rules for command line logging looking for IP addresses and obfuscate cleartext strings to C2 locations within the payload.
 
-All of that is simply done with obfuscating ip to many forms.
-# Screenshot
-![alt img](https://github.com/D4Vinci/Cuteit/blob/master/Screenshot.PNG)
+All of that can be simply done by obfuscating IPs to many different forms.
+
+## Running
+
+    python cuteit.py
+
+## Screenshot
+
+![screenshot](screenshot.png)
+
+## Notes
+
+-   Works with Python 2 & 3
