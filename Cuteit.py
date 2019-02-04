@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Author:D4Vinci
 # Don't touch my code, it's art :D
+from __future__ import print_function
 import sys, argparse
 try: # Instead of using sys to detect python version
 	input = raw_input
@@ -44,7 +45,7 @@ def ip_urlencoded(ip):
 	return [ ( "%2E".join([ "%3"+i for i in ip.split(".") ]) ).replace(":","%3A") ]
 
 def ip_as_url(ip):
-	urls = ["http://","http://howsecureismypassword.net@","http://google.com@accounts@","https://www.facebook.com+settings&tab=privacy@"]
+	urls = ["http://howsecureismypassword.net@","http://google.com@accounts@","https://www.facebook.com+settings&tab=privacy@"]
 	return [ u+ip for u in urls]
 
 def main():
@@ -54,12 +55,14 @@ def main():
 	args = parser.parse_args()
 	G,B,R,W,M,C,end = '\033[92m','\033[94m','\033[91m','\x1b[37m','\x1b[35m','\x1b[36m','\033[0m'
 	Bold,underline  = "\033[1m","\033[4m"
+	heart = '❤️ '
 	if args.disable_coloring:
 		G = B = R = W = M = C = Bold = underline = ''
-	print(end+G+Bold+"Cuteit IP obfuscator made with ❤️  By Karim 'D4Vinci' Shoair")
+		heart = "<3" # Fuck you windows!
+	print(end+G+Bold+"Cuteit IP obfuscator made with "+heart+" By Karim 'D4Vinci' Shoair", file=sys.stderr)
 	ip = args.ip
 	if ip.count(".")!=3:
-		print(end+R+Bold+"Sorry, we convert ips only not urls!"+end)
+		print(end+R+Bold+"Sorry, we convert ips only not urls!"+end, file=sys.stderr)
 		exit(0)
 
 	# My own shit regex :D
@@ -71,13 +74,13 @@ def main():
 	formats = {"IP to Long":ip2long, "IP to HEX":hex_alike, "IP to Octal":ip2octal, "IP to urlencoded IP":ip_urlencoded}
 
 	for form in formats:
-		print(end+M+Bold+"- Converting "+form+end)
+		print(end+M+Bold+"- Converting "+form+end, file=sys.stderr)
 		for n,thing in enumerate( formats[form](ip) ):
-			print(end+G+"\t* Using "+end+R+thing+end+G+" form")
+			print(end+G+"\t* Using "+end+R+"http://"+thing+end+G+" form", file=sys.stderr)
 			for i,shape in enumerate(ip_as_url(thing)):
-				print(end+W+"\t\t["+str(i)+"] "+end+G+shape)
+				print(end+W+"\t\t["+str(i)+"] "+end+G+shape, file=sys.stderr)
 				sys.stdout.flush() # So it prints line by line not hanging
-			print("")
+			print("", file=sys.stderr)
 			sys.stdout.flush()
 
 class lib:
